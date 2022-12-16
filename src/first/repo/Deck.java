@@ -3,20 +3,23 @@ package first.repo;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.util.Random;
 
 public class Deck {
-    private List<Card> cards;
+    private List<Card> deck;
     
     public Deck(){
-        cards = new ArrayList<Card>();
+        deck = new ArrayList<Card>();
         
-        for(CardRank rank : CardRank.values()) {
-            for(Suit suit : Suit.values()){
+        for(Rank rank : Rank.values()) {
+            for (Suit suit : Suit.values()) {
                 Card newCard = new Card(rank, suit);
-                cards.add(newCard);
+                deck.add(newCard);
             }
         }
-        
-        Collections.shuffle(cards);
+    }
+
+    public void shuffle(){
+        Collections.shuffle(deck,new Random());
     }
 }
