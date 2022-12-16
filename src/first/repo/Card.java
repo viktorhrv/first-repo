@@ -1,5 +1,5 @@
 package first.repo;
-
+//raboti li
 public class Card {
     private CardRank rank;
     private Suit suit;
