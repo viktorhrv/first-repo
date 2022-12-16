@@ -22,4 +22,15 @@ public class Deck {
     public void shuffle(){
         Collections.shuffle(deck,new Random());
     }
+
+    //method to remove drawn cards
+    public Card takeCard(){
+        //copies the first card from the deck
+        Card cardToTake = new Card(deck.get(0));
+        //removes the card
+        deck.remove(0);
+        // returns the card
+        return cardToTake;
+
+    }
 }
