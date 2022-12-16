@@ -15,7 +15,7 @@ public class Card {
     }
     
     public int getValue(){
-        return rank.getValue();
+        return rank.rankValue;
     }
     
     public String toString(){

@@ -1,15 +1,25 @@
 package first.repo;
 
 public enum Rank {
-    N2, N3, N4, N5, N6, N7, N8, N9, N10, J, Q, K, A;
-    
-    public int getValue(){
-        if(this == Rank.A) {
-            return 11;
-        }
-        if(this == Rank.J || this == Rank.Q || this == Rank.K) {
-            return 10;
-        }
-        return Integer.valueOf(toString().substring(1));
+    ACE("Ace", 11),
+    TWO("Two", 2),
+    THREE("Three", 3),
+    FOUR("Four",4),
+    FIVE("Five",5),
+    SIX("Six",6),
+    SEVEN("Seven",7),
+    EIGHT("Eight",8),
+    NINE("Nine",9),
+    TEN("Ten",10),
+    JACK("Jack",10),
+    QUEEN("Queen",10),
+    KING("King",10);
+
+    String rankName;
+    int rankValue;
+
+    Rank(String rankName, int rankValue){
+        this.rankName = rankName;
+        this.rankValue = rankValue;
     }
 }
