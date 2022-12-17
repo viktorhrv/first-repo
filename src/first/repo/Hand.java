@@ -3,21 +3,21 @@ package first.repo;
 import java.util.ArrayList;
 
 public class Hand {
-    private ArrayList<Card> hand;
+    private ArrayList<Card> cards;
     
     public Hand(){
-        hand = new ArrayList<Card>();
+        cards = new ArrayList<Card>();
     }
     
     public void takeCardFromDeck(Deck deck){
-        hand.add(deck.takeCard());
+        cards.add(deck.takeCard());
     }
 
-    public int calculatedValue(){
+    public int calculateValue(){
         int value = 0;
         int aceCount = 0;
 
-        for(Card card: hand){
+        for(Card card: cards){
             value += card.getValue();
             if (card.getValue() == 11){
                 aceCount++;
