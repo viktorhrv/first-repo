@@ -1,4 +1,6 @@
-build.xml
+*.xml
+*.iml
 manifest.mf
 nbproject/
-/build/
+build/
+.idea/
