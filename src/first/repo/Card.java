@@ -19,10 +19,6 @@ public class Card {
     }
     
     public String toString(){
-        String rankAsString = rank.toString();
-        if(rankAsString.startsWith("N")) {
-            rankAsString = rankAsString.substring(1);
-        }
-        return rankAsString + " " + suit.toString();
+        return rank.toString() + " " + suit.toString();
     }
 }
