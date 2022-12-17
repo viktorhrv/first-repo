@@ -1,10 +1,10 @@
 package first.repo;
 //raboti li
 public class Card {
-    private CardRank rank;
+    private Rank rank;
     private Suit suit;
     
-    public Card(CardRank rank, Suit suit){
+    public Card(Rank rank, Suit suit){
         this.rank = rank;
         this.suit = suit;
     }
@@ -15,7 +15,7 @@ public class Card {
     }
     
     public int getValue(){
-        return rank.getValue();
+        return rank.rankValue;
     }
     
     public String toString(){

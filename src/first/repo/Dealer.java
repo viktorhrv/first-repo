@@ -1,2 +1,5 @@
-package first.repo;public class Dealer {
+package first.repo;
+
+public class Dealer extends Person {
+
 }
