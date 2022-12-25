@@ -31,4 +31,8 @@ public class Hand {
         }
         return value;
     }
+    
+    public Card getCard(int i){
+        return cards.get(i);
+    }
 }
