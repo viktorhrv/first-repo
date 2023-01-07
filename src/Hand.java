@@ -33,4 +33,8 @@ public class Hand {
     public Card getCard(int i){
         return cards.get(i);
     }
+    
+    public Card getLastCard(){
+        return cards.get(cards.size() - 1);
+    }
 }

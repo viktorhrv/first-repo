@@ -2,8 +2,8 @@ import java.util.Scanner;
 
 public class Game {
     private Deck deck;
-    private Player player;
     private Dealer dealer;
+    private Player player;
     
     public Game(){
         deck = new Deck();

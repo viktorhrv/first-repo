@@ -87,7 +87,13 @@ public class MenuWindow extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
-        jLabel1.setText("Game started");
+        this.dispose();
+        
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                new PlayingWindow().setVisible(true);
+            }
+        });
     }//GEN-LAST:event_jButton1MouseClicked
 
     private void jButton2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton2MouseClicked

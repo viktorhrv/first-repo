@@ -8,12 +8,31 @@
  * @author user
  */
 public class PlayingWindow extends javax.swing.JFrame {
+    private Deck deck;
+    private Dealer dealer;
+    private Player player;
 
     /**
      * Creates new form PlayingWindow
      */
     public PlayingWindow() {
         initComponents();
+        deck = new Deck();
+        player = new Player();
+        dealer = new Dealer();
+        
+        deck.shuffle();
+        
+        dealer.getHand().takeCardFromDeck(deck);
+        dealer.getHand().takeCardFromDeck(deck);
+        
+        player.getHand().takeCardFromDeck(deck);
+        
+        dealerHandLabel.setText(dealer.getHand().getCard(0).toString());
+        playerHandLabel.setText(player.getHand().getCard(0).toString());
+        
+        dealerResultLabel.setText(dealer.getHand().getCard(0).getValue() + " points");
+        playerResultLabel.setText(player.getHand().getCard(0).getValue() + " points");
     }
 
     /**
@@ -25,21 +44,166 @@ public class PlayingWindow extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jPanel1 = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        dealerHandLabel = new javax.swing.JLabel();
+        playerHandLabel = new javax.swing.JLabel();
+        stopBtn = new javax.swing.JButton();
+        takeCardBtn = new javax.swing.JButton();
+        passBtn = new javax.swing.JButton();
+        dealerResultLabel = new javax.swing.JLabel();
+        playerResultLabel = new javax.swing.JLabel();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        jLabel1.setText("Dealer's hand:");
+
+        jLabel2.setText("Player's hand:");
+
+        dealerHandLabel.setText("(Cards)");
+
+        playerHandLabel.setText("(Cards)");
+
+        stopBtn.setText("Stop taking cards");
+        stopBtn.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                stopBtnMouseClicked(evt);
+            }
+        });
+
+        takeCardBtn.setText("Take card");
+        takeCardBtn.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                takeCardBtnMouseClicked(evt);
+            }
+        });
+
+        passBtn.setText("Pass");
+        passBtn.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                passBtnMouseClicked(evt);
+            }
+        });
+
+        dealerResultLabel.setText("(Points)");
+
+        playerResultLabel.setText("(Points)");
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(48, 48, 48)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 97, Short.MAX_VALUE)
+                            .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(dealerHandLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 292, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(dealerResultLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(playerHandLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 292, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(playerResultLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(0, 0, Short.MAX_VALUE))))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(takeCardBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(52, 52, 52)
+                        .addComponent(stopBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(44, 44, 44)
+                        .addComponent(passBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(67, Short.MAX_VALUE))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(65, 65, 65)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(dealerHandLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(dealerResultLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(12, 12, 12)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(playerResultLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(playerHandLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addGap(71, 71, 71)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(takeCardBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(stopBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(passBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(17, 17, 17))
+        );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(44, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void takeCardBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_takeCardBtnMouseClicked
+        player.getHand().takeCardFromDeck(deck);
+        playerHandLabel.setText(playerHandLabel.getText()+ ", " + player.getHand().getLastCard());
+        
+        int playerResult = player.getHand().calculateValue();
+        
+        if(playerResult <= 21) {
+            playerResultLabel.setText(playerResult + " points");
+        }
+        else {
+            this.dispose();
+            
+            java.awt.EventQueue.invokeLater(new Runnable() {
+                public void run() {
+                    new ResultWindow(deck, dealer, player, true).setVisible(true);
+                }
+            });
+        }
+    }//GEN-LAST:event_takeCardBtnMouseClicked
+
+    private void stopBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_stopBtnMouseClicked
+        this.dispose();
+        
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                new ResultWindow(deck, dealer, player, false).setVisible(true);
+            }
+        });
+    }//GEN-LAST:event_stopBtnMouseClicked
+
+    private void passBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_passBtnMouseClicked
+        this.dispose();
+        
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                new ResultWindow(deck, dealer, player, true).setVisible(true);
+            }
+        });
+    }//GEN-LAST:event_passBtnMouseClicked
 
     /**
      * @param args the command line arguments
@@ -77,5 +241,15 @@ public class PlayingWindow extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel dealerHandLabel;
+    private javax.swing.JLabel dealerResultLabel;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JButton passBtn;
+    private javax.swing.JLabel playerHandLabel;
+    private javax.swing.JLabel playerResultLabel;
+    private javax.swing.JButton stopBtn;
+    private javax.swing.JButton takeCardBtn;
     // End of variables declaration//GEN-END:variables
 }
