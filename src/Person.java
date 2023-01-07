@@ -1,5 +1,3 @@
-package first.repo;
-
 //Parent class of Player and Dealer
 public abstract class Person {
     private Hand hand;

@@ -1,5 +1,3 @@
-package first.repo;
-
 import java.util.ArrayList;
 
 public class Hand {

@@ -1,5 +1,3 @@
-package first.repo;
-
 public enum Rank {
     ACE("Ace", 11),
     TWO("Two", 2),

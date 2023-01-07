@@ -1,5 +1,3 @@
-package first.repo;
-
 import java.util.Scanner;
 
 public class Game {
@@ -16,7 +14,7 @@ public class Game {
 
         playGame();
     }
-
+  
     private void playGame(){
         dealer.getHand().takeCardFromDeck(deck);
         dealer.getHand().takeCardFromDeck(deck);
@@ -25,7 +23,7 @@ public class Game {
         
         System.out.println("Dealer's card: " + dealer.getHand().getCard(0));
         System.out.println("Player's card: " + player.getHand().getCard(0));
-        
+         
         boolean playing = true;
         
         while(playing) {
@@ -77,4 +75,8 @@ public class Game {
             System.out.println("Tie!");
         }
     }
+    
+    public static void main(String[] args) {
+        System.out.println("Hello, player!");
+    }        
 }

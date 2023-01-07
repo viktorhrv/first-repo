@@ -1,5 +1,3 @@
-package first.repo;
-
 public class Player extends Person{
     private String name = "Player";
     

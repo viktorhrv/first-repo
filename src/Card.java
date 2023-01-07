@@ -1,5 +1,3 @@
-package first.repo;
-//raboti li
 public class Card {
     private Rank rank;
     private Suit suit;
