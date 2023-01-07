@@ -11,8 +11,6 @@ public class Game {
         dealer = new Dealer();
 
         deck.shuffle();
-
-        playGame();
     }
   
     private void playGame(){
@@ -76,7 +74,8 @@ public class Game {
         }
     }
     
-    public static void main(String[] args) {
-        System.out.println("Hello, player!");
-    }        
+    public static void main1(String[] args) {
+        Game game = new Game();
+        game.playGame();
+    }   
 }
