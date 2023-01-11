@@ -1,2 +1,0 @@
-ResultWindow
-ResultWindow$1

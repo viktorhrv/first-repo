@@ -1,4 +1,0 @@
-Sno.       First Name      Surname         Reg.No          Program of Study
-Sno.       First Name      Surname         Reg.No          Program of Study
-Sno.       First Name      Surname         Reg.No          Program of Study
-Sno.       First Name      Surname         Reg.No          Program of Study
